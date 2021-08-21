@@ -1,4 +1,4 @@
-package com.example.kotlintutorial2
+package net.nowherelands.kotlintutorial2
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.example.kotlintutorial2", appContext.packageName)
+        assertEquals("net.nowherelands.kotlintutorial2", appContext.packageName)
     }
 }

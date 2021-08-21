@@ -1,4 +1,4 @@
-package com.example.kotlintutorial2
+package net.nowherelands.kotlintutorial2
 
 class CoinDice(
     type: String = "dice"

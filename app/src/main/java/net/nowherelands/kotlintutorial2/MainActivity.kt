@@ -1,4 +1,4 @@
-package com.example.kotlintutorial2
+package net.nowherelands.kotlintutorial2
 
 import android.os.Bundle
 import android.util.Log
@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val fungus: TextView = findViewById(R.id.tossed_results)
+        val trollResults: TextView = findViewById(R.id.tossed_results)
         val roflButton: Button = findViewById(R.id.btn_roll)
         val switchCoinDice: SwitchCompat = findViewById(R.id.switch_is_coin)
         val coinDiceImage: ImageView = findViewById(R.id.coinDicePic)
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             }
             coinDiceImage.setImageResource(imgID)
             coinDiceImage.contentDescription = rollResult
-            getString(R.string.troll_message, if(rollType=="dice") "Rolled" else "Tossed", rollResult).also { fungus.text = it }
+            getString(R.string.troll_message, if(rollType=="dice") "Rolled" else "Tossed", rollResult).also { trollResults.text = it }
             Log.d("CoinDice", "${if (rollType=="dice") "Rolled" else "Tossed"} result: ${rollResult}")
             coinDiceImage.contentDescription = rollResult
 
@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             this.rollType = if (isChecked) "coin" else "dice"
             coinDiceImage.setImageResource(0)
             roflButton.setText(if(isChecked) R.string.btn_toss else R.string.btn_roll)
-            fungus.setText("")
+            trollResults.setText("")
             Log.d("CoinDice", "Set rolltype to ${this.rollType}")
         }
 

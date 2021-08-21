@@ -1,4 +1,4 @@
-package com.example.kotlintutorial2
+package net.nowherelands.kotlintutorial2
 
 import org.junit.Test
 
@@ -27,14 +27,14 @@ class UnitTest {
 
     @Test
     fun coinDice_diceWithinBounds() {
-        val troll = CoinDice().troll();
+        val troll = CoinDice().troll()
         val ball = arrayOf("1", "2", "3", "4", "5", "6")
         assertTrue("Dice throw produced wrong result!", (troll in ball))
     }
 
     @Test
     fun coinDice_coinWithinBounds() {
-        val troll = CoinDice("coin").troll();
+        val troll = CoinDice("coin").troll()
         val ball = arrayOf("Heads", "Tails")
         assertTrue("Dice throw produced wrong result!", (troll in ball))
     }

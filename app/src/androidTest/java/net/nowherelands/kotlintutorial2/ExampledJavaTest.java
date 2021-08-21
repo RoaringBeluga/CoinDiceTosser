@@ -1,4 +1,4 @@
-package com.example.kotlintutorial2;
+package net.nowherelands.kotlintutorial2;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
