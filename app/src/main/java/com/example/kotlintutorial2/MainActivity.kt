@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
             this.rollType = if (isChecked) "coin" else "dice"
             coinDiceImage.setImageResource(0)
             roflButton.setText(if(isChecked) R.string.btn_toss else R.string.btn_roll)
+            fungus.setText("")
             Log.d("CoinDice", "Set rolltype to ${this.rollType}")
         }
 
