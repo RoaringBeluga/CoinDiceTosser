@@ -1,6 +1,7 @@
 package com.example.kotlintutorial2
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -36,16 +37,22 @@ class MainActivity : AppCompatActivity() {
                 else -> R.drawable.dice_6
             }
             coinDiceImage.setImageResource(imgID)
-            coinDiceImage.tooltipText = rollResult
             coinDiceImage.contentDescription = rollResult
             getString(R.string.troll_message, if(rollType=="dice") "Rolled" else "Tossed", rollResult).also { fungus.text = it }
-            fungus.contentDescription = rollResult
+            Log.d("CoinDice", "${if (rollType=="dice") "Rolled" else "Tossed"} result: ${rollResult}")
+            coinDiceImage.contentDescription = rollResult
 
         }
 
         switchCoinDice.setOnCheckedChangeListener { _, isChecked ->
             this.rollType = if (isChecked) "coin" else "dice"
+            coinDiceImage.setImageResource(0)
             roflButton.setText(if(isChecked) R.string.btn_toss else R.string.btn_roll)
+            Log.d("CoinDice", "Set rolltype to ${this.rollType}")
+        }
+
+        coinDiceImage.setOnClickListener() {
+            Log.wtf("CoinDice", "Someone touched the CoinDice!")
         }
     }
 
