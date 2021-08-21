@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="coinDiceDescription">Coin and Dice image</string>
+    <string name="switch_label_coin">Coin</string>
+    <string name="switch_select_coin" />
+    <string name="switch_select_dice">Dice</string>
+</resources>

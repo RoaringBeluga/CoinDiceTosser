@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Multi-Faceted-Coin Roller</string>
+    <string name="btn_roll">ROLL</string>
+    <string name="btn_toss">TOSS</string>
+    <string name="boast">Rolling it!</string>
+    <string name="coinDiceDescription">Coin and Dice image</string>
+    <string name="switch_label_coin">Toss the coin?</string>
+    <string name="switch_select_coin">Coin</string>
+    <string name="switch_select_dice">Dice</string>
+    <string name="troll_message">%1$s: %2$s</string>
+</resources>
