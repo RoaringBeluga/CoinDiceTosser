@@ -2,6 +2,7 @@ package net.nowherelands.kotlintutorial2
 
 import android.os.Bundle
 import android.util.Log
+import android.view.MotionEvent
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -20,6 +21,9 @@ class MainActivity : AppCompatActivity() {
         val roflButton: Button = findViewById(R.id.btn_roll)
         val switchCoinDice: SwitchCompat = findViewById(R.id.switch_is_coin)
         val coinDiceImage: ImageView = findViewById(R.id.coinDicePic)
+
+        var plopped = false
+        var moved = false
 
         roflButton.setOnClickListener {
 
@@ -54,6 +58,30 @@ class MainActivity : AppCompatActivity() {
 
         coinDiceImage.setOnClickListener() {
             Log.wtf("CoinDice", "Someone touched the CoinDice!")
+        }
+
+        coinDiceImage.setOnTouchListener() { _, laEvent ->
+            Log.d("CoinDice", laEvent.toString())
+            val action = laEvent.action
+            when(action) {
+                MotionEvent.ACTION_DOWN -> {
+                    plopped = true
+                    Log.d("CoinDice", "Touched down")
+                }
+                MotionEvent.ACTION_MOVE -> {
+                    moved = true
+                    Log.d("CoinDice", "Moved - Touch-and-move started, roll/toss imminent")
+                }
+                MotionEvent.ACTION_UP -> {
+                    if (plopped && moved) {
+                        plopped = false
+                        moved = false
+                        roflButton.performClick()
+                        Log.d("CoinDice", "Touch-and-moved on the image - rolling/tossing")
+                    }
+                }
+            }
+            super.onTouchEvent(laEvent)
         }
     }
 
