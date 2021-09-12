@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('') {
+      steps {
+        build 'Jobba'
+      }
+    }
+
   }
 }
