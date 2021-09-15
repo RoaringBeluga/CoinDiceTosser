@@ -5,18 +5,6 @@ plugins {
 
 android {
     signingConfigs {
-        debug {
-            storeFile file('/home/desman/AndroidStudioProjects/KeyStore/Keystore.jks')
-            storePassword 'keyst0re'
-            keyAlias 'key1'
-            keyPassword 'keyst0re'
-        }
-        release {
-            storeFile file('/home/desman/AndroidStudioProjects/KeyStore/Keystore.jks')
-            storePassword 'keyst0re'
-            keyAlias 'key1'
-            keyPassword 'keyst0re'
-        }
     }
     buildToolsVersion "30.0.3"
 
