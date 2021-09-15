@@ -2,6 +2,7 @@ package net.nowherelands.kotlintutorial2;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.swipeLeft;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isChecked;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
@@ -21,6 +22,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(AndroidJUnit4.class)
 public class ExampledJavaTest {
+
+    private int repetitions = 10;
+
     @Rule
     public ActivityScenarioRule<MainActivity> mActivityTestRule = new ActivityScenarioRule<>(MainActivity.class);
 
@@ -35,7 +39,7 @@ public class ExampledJavaTest {
 
     @Test
     public void tossTheDice() {
-        for(int i = 0; i < 10; i++) {
+        for(int i = 0; i < repetitions; i++) {
             onView(withId(R.id.switch_is_coin))
                     .check(matches(isNotChecked()));
             onView(withId(R.id.btn_roll))
@@ -69,5 +73,24 @@ public class ExampledJavaTest {
                         withContentDescription("Heads"),
                         withContentDescription("Tails")
                 )));
+    }
+
+    @Test
+    public void swipeThePic() {
+        for (int i=0; i < repetitions; i++) {
+            onView(withId(R.id.coinDicePic))
+                    .check(matches(isDisplayed()))
+                    .perform(swipeLeft())
+                    .check(matches(anyOf(
+                            withContentDescription("1"),
+                            withContentDescription("2"),
+                            withContentDescription("3"),
+                            withContentDescription("4"),
+                            withContentDescription("5"),
+                            withContentDescription("6"),
+                            withContentDescription("Heads"),
+                            withContentDescription("Tails")
+                    )));
+        }
     }
 }
