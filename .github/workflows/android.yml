@@ -27,7 +27,7 @@ jobs:
     - name: Create unsigned release .apk
       run: ./gradlew packageRelease
     - name: Archive .apk
-      uses: actions/upload@v2
+      uses: actions/upload-artifact@v2
       with:
         name: release-unsigned-apk
         path: app/build/outputs/apk/release
