@@ -1,4 +1,5 @@
 image: jangrewe/gitlab-ci-android
+# Trouble pulling the image
 
 
 cache:
