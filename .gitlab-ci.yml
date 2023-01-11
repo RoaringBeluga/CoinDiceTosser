@@ -1,5 +1,6 @@
 image: jangrewe/gitlab-ci-android
 
+
 cache:
   key: ${CI_PROJECT_ID}
   paths:
@@ -17,6 +18,8 @@ assembleDebug:
 #  only:
 #    - development
 #    - tags
+  tags:
+    - shared
   script:
     - ./gradlew assembleDebug
   artifacts:
