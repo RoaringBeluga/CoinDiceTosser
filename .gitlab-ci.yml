@@ -13,6 +13,7 @@ before_script:
 
 stages:
   - build
+  - test
 
 assembleDebug:
   stage: build
@@ -26,3 +27,10 @@ assembleDebug:
   artifacts:
     paths:
       - app/build/outputs/apk/debug
+
+testUI:
+  stage: test
+  tags:
+    - shared
+  script:
+    - ./graflew test
