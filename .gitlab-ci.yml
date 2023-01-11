@@ -14,8 +14,8 @@ stages:
 
 assembleDebug:
   stage: build
-  only:
-    - development
+#  only:
+#    - development
     - tags
   script:
     - ./gradlew assembleDebug
